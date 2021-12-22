@@ -1,0 +1,32 @@
+Various parts of the product:
+
+-> WEB INTERFACE (UI)
+	-> HTML 5
+	-> BOOTSTRAP 5
+-> MACHINE LEARNING MODELS
+	-> MULTI-LINEAR REGRESSION or MULTI-VARIABLE LINEAR REGRESSION
+	-> DECISION TREE
+-> FLASK
+
+Modules of python used:
+-> numpy
+-> pandas
+-> sklearn (for ML Algorithms)
+-> matplotlib (data visualization)
+-> seaborn (heatmaps)
+-> flask
+-> pickle
+
+Flask usage:
+------------
+
+Flask is the python framework. It is used for the web pages navigation, reading data from input fields of UI  and processing it. And also to integrate ML Models with the web pages.
+
+Development Platforms:
+----------------------
+
+-> VSCode (for creating UI)
+-> Google Colab (for developing required ML Models)
+-> Jupyter (for developing required ML Models)
+-> Pycharm (to deploy final project and integration of ML Models with web)	
+	

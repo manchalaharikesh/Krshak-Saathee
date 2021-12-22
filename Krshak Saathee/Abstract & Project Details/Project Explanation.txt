@@ -1,0 +1,27 @@
+Problem Explanation:
+
+We grew up watching the scenarios like farmers were unable to get fair prices to their crops. 
+This is due to the production of crop more than the demand. When farmers won't get good benefits from their earlier crops they switch the crop in next crop years. 
+This causes a shortage of that crop in the upcoming years and prices for that crop will rise eventually. 
+
+Due to the repeated occurence of such scenarios as described above, we could see sudden, huge rise and fall in the same crop price in consecutive years.
+-> THIS IS DUE TO THE COMMUNICATION IMBALANCE AMONG THE FARMERS AND THE GOVERNMENT.
+
+Believed Solution:
+
+Crop Statistics:
+
+-> Our Aim is to solve the problem of communication imbalance among farmers.
+-> Our main aspect of this project is to create a real-time bar graph for crop yield.
+-> With the data obtained from farmers registration on thier district, crop name and area of cultivation we calculate the crop yield.
+-> With this data we plot a bar graph for that crop. We also plot a threshold line which is the demand or required production for that crop in the current year.
+-> This enables the other farmers to make their decision to grow that crop or not accordingly.
+-> So, the upcoming farmers can make a decision of growing the crop by comparing their calculated yield estimations and bar graph.
+-> By this we are ensuring that production of crop is in a good relation with the demand of operational year.
+-> This makes a communication balance between farmers to produce crops in accordance to demand and procure good benefits.
+
+Other Works:
+
+-> crop yield estimation estimates the crop yield and price to help the farmer in making the decision.
+-> We also worked on helping farmers to make a decision on the crop, they have to grow by enabling them to predict their crop's yield.
+-> We also worked on giving suitabe crop and fertilizer recommendation.
