@@ -1,7 +1,7 @@
 # Krshak-Saathee
 ***Krshak Saathee*** is a web app which is a part of our 2-day hackathon during the Convergene fest at our college ***VNR VIGNANA JYOTHI INSTITUTE OF ENGINEERING AND TECHNOLOGY***. It commits to solve few problems faced by farmers and enhancing agriculture through Machine Learning. Team members and contributors:
 1. <a href="https://github.com/manchalaharikesh" target="_blank">M. Harikesh</a>
-2. <a href="https://github.com/ritish1082" target="_blank"><li>M.Sai Ritish Reddy</li></a>
+2. <a href="https://github.com/ritish1082" target="_blank">M.Sai Ritish Reddy</a>
 
 # Problem Explanation
 We grew up watching the scenarios like farmers were unable to get fair prices to their crops. 
