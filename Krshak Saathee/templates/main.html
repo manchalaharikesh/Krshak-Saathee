@@ -8,91 +8,164 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Anton&family=Creepster&family=Dongle:wght@700&family=Eater&family=Griffy&family=Indie+Flower&family=Libre+Baskerville:wght@700&family=Lobster&family=Mochiy+Pop+One&family=Nosifer&family=Orbitron:wght@700&family=Pacifico&family=Permanent+Marker&family=Poppins:wght@300&family=Praise&family=Satisfy&family=Shalimar&family=Space+Grotesk:wght@600&family=Space+Mono:ital@1&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/259314c312.js" crossorigin="anonymous"></script>
+
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+            }
+    
+            nav {
+                background-color: #333;
+                overflow: hidden;
+                color: white;
+                padding: 20px;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+
+            nav a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            nav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .title {
+                float: left;
+                padding: 14px 16px;
+            }
+
+            .right-nav {
+                float: right;
+            }
+
+            /* Add some padding to the content to prevent it from being covered by the fixed navbar */
+            .content {
+                padding-top: 60px; /* Adjust this value based on the height of your navbar */
+            }
+
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 20px;
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .card {
+                width: calc(33.33% - 20px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                overflow: hidden;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .card:hover {
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+
+            .card img {
+                width: 100%;
+                height: 250px;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+
+            .card-footer {
+                background-color: #f8f9fa;
+                padding: 10px 20px;
+                text-align: right;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                background-color: #218838;
+                color: white;
+            }
+
+            footer {
+                background-color: #333;
+                color: white;
+                padding: 20px;
+                width: 100%;
+                height: 60px;
+                text-align: center;
+            }
+
+            .footer-left {
+                float: left;
+            }
+
+            .footer-right {
+                float: right;
+            }
+
+            /* Highlight effect on hover for .highlight-on-hover */
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+            .highlight-on-hover:hover {
+                color: #ffd700; /* Highlight color (you can change this) */
+                transition: color 0.3s ease; /* Transition effect for a smoother highlight */
+            }
+        </style>
     </head>
 
     <body>
-
-        <!-- Main Container -->
-        <div class="container-fluid">
-
-            <!-- NavBar -->
-            <nav class="navbar navbar-expand-lg bg-dark mb-3 mt-3 rounded" style="position: sticky; top: 0px; z-index: 2;">
-
-                <!-- container for NAVBAR CONTENTS -->
-                <div class="container-fluid ">
-
-                    <!-- LOGO + NAME -->
-                    <a href="/" class="navbar-brand text-info">
-
-                        <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-oyjETPMOqk9095voAuiu1niNi3J7yJeqjA&usqp=CAU" width="80px" alt="This image is removed">
-                        <h1 class="d-inline"><b>Krshak Saathee</b></h1>
-
-                    </a>
-
-                    <!-- Collapse for MOBILES -->
-                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#header">
-
-                        <span class="navbar-toggler-icon p-1 text-white"><i class="fas fa-bars"></i></span>
-
-                    </button>
-
-                    <!-- NAVBAR CONTENTS -->
-                    <div class="collapse navbar-collapse justify-content-end " id="header">
-
-                        <ul class="navbar-nav">
-
-                            <!-- Home Page Btn  -->
-                            <li class="nav-item ">
-
-                               <a href="/" class="nav-link text-white"><i class="fas fa-home"></i>Home</a>
-
-                            </li>
-
-                            <!-- Profile Page Btn -->
-                            <li class="nav-item">
-
-                                <a href="#" class="nav-link  text-white"><i class="fas fa-users"></i>Profile</a>
-
-                            </li>
-
-                            <!-- Help Page Btn -->
-                            <li class="nav-item">
-
-                                <a href="#" class="nav-link text-white"><i class="far fa-question-circle"></i>Help</a>
-
-                            </li>
-
-                        </ul>
-
-                    </div>
-
+            <nav>
+                <div class="title">SowAndReap</div>
+                <div class="right-nav">
+                    <a href="/">Home</a>
+                    <a href="/chat">Chat</a>
                 </div>
-
             </nav>
 
             <!-- Images Carousel -->
-            <div class="carousel carousel-fade mb-5 carousel-dark" data-bs-ride="carousel" id="menu">
+            <div class="carousel carousel-fade mt-5 mb-6 carousel-dark" data-bs-ride="carousel" id="menu">
 
                 <div class="carousel-inner text-center">
 
                     <!-- Img 1 Carousel -->
                     <div class="carousel-item" data-bs-interval="1500">
 
-                        <img class="w-50 mx-auto" src="https://t4.ftcdn.net/jpg/03/76/16/97/360_F_376169762_dKy1qwZVDOebdFKVL9oMcJvwT2djau93.jpg" height="500px" alt="This image is removed">
+                        <img class="w-100 mx-auto" src="https://getwallpapers.com/wallpaper/full/d/5/6/425881.jpg" width="100%" height="500px" alt="This image is removed">
 
                     </div>
 
                     <!-- Img 2 Carousel -->
                     <div class="carousel-item" data-bs-interval="1500">
 
-                        <img class="w-50 mx-auto" src="https://thumbs.dreamstime.com/b/agriculture-technology-concept-man-agronomist-using-tablet-internet-things-agriculture-technology-concept-man-agronomist-208777786.jpg" height="500px" alt="This image is removed">
+                        <img class="w-100 mx-auto" src="https://wallpapercave.com/wp/wp7429557.png" width="100%" height="500px" alt="This image is removed">
 
                     </div>
 
                     <!-- Img 3 Carousel -->
                     <div class="carousel-item active" data-bs-interval="3000">
 
-                        <img class="w-50 mx-auto" src="https://img.etimg.com/thumb/msid-79009147,width-1200,height-900,imgsize-759579,resizemode-8,quality-100/20201103_unnati-agri_01.jpg" height="500px" alt="This image is removed">
+                        <img class="w-100 mx-auto" src="https://th.bing.com/th/id/OIP.EO2Lt0u8a5p5h3QL6EU16wHaEK?w=313&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" width="100%" height="500px" alt="This image is removed">
 
                     </div>
 
@@ -118,152 +191,87 @@
 
             </div>
 
-            <!--cards row 1-->
-
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 mb-5 justify-content-evenly">
-
+            <div class="card-container">
 
                 <!-- Current Stats -->
-                <div class="col-lg-4 mb-3">
-
-                    <div class="card shadow  rounded">
-
-                        <img src="https://www.pngitem.com/pimgs/m/11-115579_dashboard-monitoring-icon-png-transparent-png.png" alt="This image is removed">
-                        <div class="card-body">
-
-                            <h1>Current Statistics</h1>
-                            <p class="lead">This section gives data visualisations in form of graphs about current crop season statistics in your area.</p>
-
-                        </div>
-
-                        <div class="card-footer">
-
-                            <a href="currentstatistics" target="_blank">
-                                <button class="btn btn-success float-end">View Graph</button>
-                            </a>
-
-                        </div>
-
+                <div class="card">
+                    <img src="https://www.pngitem.com/pimgs/m/11-115579_dashboard-monitoring-icon-png-transparent-png.png" alt="This image is removed">
+                    <div class="card-body">
+                        <h3>Current Statistics</h3>
+                        <p class="lead">This section gives data visualizations in the form of graphs about current crop season statistics in your area.</p>
                     </div>
-
+                    <div class="card-footer">
+                        <a href="currentstatistics">
+                            <button class="btn">View Graph</button>
+                        </a>
+                    </div>
                 </div>
-
+            
                 <!-- Crop Registration -->
-                <div class="col-lg-4 mb-3">
-
-                    <div class="card shadow rounded">
-
-                        <img src="https://cdn.dribbble.com/users/861135/screenshots/6083954/media/89ddfb829a6599f96d1ffe87c5a1ab25.png?compress=1&resize=400x300" alt="This image is removed">
-                        <div class="card-body">
-
-                            <h1>Crop Registration</h1>
-                            <p class="lead">Register your current year crop plan, and compare with other fellow farmers in your region to ascertain demand-production estimates.</p>
-
-                        </div>
-
-                        <div class="card-footer">
-                            <a href="cropregistration" target="_blank">
-                                <button class="btn btn-success float-end">Register</button>
-                            </a>
-                        </div>
-
+                <div class="card">
+                    <img src="https://cdn.dribbble.com/users/861135/screenshots/6083954/media/89ddfb829a6599f96d1ffe87c5a1ab25.png?compress=1&resize=400x300" alt="This image is removed">
+                    <div class="card-body">
+                        <h3>Crop Registration</h3>
+                        <p class="lead">Register your current year crop plan, and compare with other fellow farmers in your region to ascertain demand-production estimates.</p>
                     </div>
-
+                    <div class="card-footer">
+                        <a href="cropregistration">
+                            <button class="btn">Register</button>
+                        </a>
+                    </div>
                 </div>
-
+            
                 <!-- Crop Yield Stats -->
-                <div class="col-lg-4 mb-3">
-
-                    <div class="card shadow  rounded">
-
-                        <img class="mx-auto" src="https://thumbs.dreamstime.com/b/system-monitoring-crop-field-smart-farming-color-linear-icon-checking-plants-agricultural-iot-sign-web-page-app-ui-189962088.jpg" width="60%" height="350px" alt="This image is removed">
-                        <div class="card-body">
-
-                            <h1>Crop Yield Statistics</h1>
-                            <p class="lead">This section predicts the crop yield from a plantation based on your locality and area of cultivation based on past year trends.</p>
-
-                        </div>
-
-                        <div class="card-footer">
-                            <a href="cropyield" target="_blank">
-                                <button class="btn btn-success float-end">Predict Yield</button>
-                            </a>
-                        </div>
-
+                <div class="card">
+                    <img class="mx-auto" src="https://thumbs.dreamstime.com/b/system-monitoring-crop-field-smart-farming-color-linear-icon-checking-plants-agricultural-iot-sign-web-page-app-ui-189962088.jpg" width="60%" height="350px" alt="This image is removed">
+                    <div class="card-body">
+                        <h3>Crop Yield Statistics</h3>
+                        <p class="lead">This section predicts the crop yield from a plantation based on your locality and area of cultivation based on past year trends.</p>
                     </div>
-
+                    <div class="card-footer">
+                        <a href="cropyield">
+                            <button class="btn">Predict Yield</button>
+                        </a>
+                    </div>
                 </div>
+            
+                <!-- Crop Recommendation -->
+                <div class="card">
+                    <img src="https://media.istockphoto.com/vectors/biology-scientists-doing-research-on-fruits-vector-id1272793247?k=20&m=1272793247&s=612x612&w=0&h=Bi9flbpGMAssyQKi3AZVXnLSAjJWhxNBx8AlN3O3rvs=" height="350px" alt="This image is removed">
+                    <div class="card-body">
+                        <h3>Crop Recommendation</h3>
+                        <p class="lead">This section works on the information of farm area nutrition levels such as soil composition, moisture levels, etc and suggests profitable crops.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/recommendfile">
+                            <button class="btn">Get Recommendation</button>
+                        </a>
+                    </div>
+                </div>
+            
+                <!-- Fertilizer Recommendation -->
+                <div class="card">
+                    <img src="https://www.wikihow.com/images/thumb/b/b2/Apply-Urea-Fertilizer-Step-3.jpg/v4-460px-Apply-Urea-Fertilizer-Step-3.jpg.webp" height="300px" alt="This image is removed">
+                    <div class="card-body">
+                        <h3>Fertilizer Recommendation</h3>
+                        <p class="lead">This section analyzes the soil composition, moisture levels and recommends the fertilizers to be used to enhance production.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/fertilizersfile">
+                            <button class="btn">Get Recommendation</button>
+                        </a>
+                    </div>
+                </div>
+            
             </div>
 
-            <!-- Row 2 -->
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 mb-5 justify-content-evenly">
-
-                <!-- Crop Recommendation (Ritish 1) -->
-                <div class="col-lg-4 mb-3">
-
-                    <div class="card shadow  rounded">
-
-                        <img src="https://media.istockphoto.com/vectors/biology-scientists-doing-research-on-fruits-vector-id1272793247?k=20&m=1272793247&s=612x612&w=0&h=Bi9flbpGMAssyQKi3AZVXnLSAjJWhxNBx8AlN3O3rvs=" height="350px" alt="This image is removed">
-                        <div class="card-body">
-
-                            <h1>Crop Recommendation</h1>
-                            <p class="lead">This section works on the information of farm area nutrition levels such as soil composition, moisture levels, etc and suggests profitable crops</p>
-
-                        </div>
-
-                        <div class="card-footer">
-
-                            <a href="/recommendfile" target="_blank">
-                                <button class="btn btn-success float-end">Get Recommendation</button>
-                            </a>
-
-                        </div>
-
-                    </div>
-
+            
+            <footer>
+                <div class="footer-left">SowAndReap</div>
+                <div class="footer-right">
+                    <a href="/chat" class="highlight-on-hover">Chat</a> | CMPE 280 Team 3
                 </div>
-
-                <!-- Fertilizer Recommedn (Ritish 2) -->
-                <div class="col-lg-4 mb-3">
-
-                    <div class="card shadow rounded">
-
-                        <img src="https://www.wikihow.com/images/thumb/b/b2/Apply-Urea-Fertilizer-Step-3.jpg/v4-460px-Apply-Urea-Fertilizer-Step-3.jpg.webp" height="300px" alt="This image is removed">
-                        <div class="card-body">
-
-                            <h1>Fertilizer Recommendation</h1>
-                            <p class="lead">This section analyzes the soil composition, moisture levels and recommends the fertilizers to be used to enhance production</p>
-
-                        </div>
-
-                        <div class="card-footer">
-
-                            <a href="/fertilizersfile" target="_blank">
-                                <button class="btn btn-success float-end">Get Recommendation</button>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="bg-dark d-flex mt-5 p-1 container-fluid justify-content-around">
-                <div class="1 m-3">
-                    <ul class="list-unstyled text-light text-center">
-                        <li><b>Created by Team Krshak Sathee</b></li>
-                    </ul>
-                </div>
-                <div class="1 m-3">
-                    <ul class="list-unstyled text-light text-center">
-                        <li><b>Convergence 2K21</b></li>
-                    </ul>
-
-                </div>
-
-                </div>
-            </div>
+            </footer>
 
 
         <!--Don't write below this line-->

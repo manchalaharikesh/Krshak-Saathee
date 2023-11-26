@@ -15,6 +15,14 @@ app = Flask(__name__)
 def default():
     return render_template('main.html')
 
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/currentstatistics')
 def currentstatistics():
     return render_template('current_statistics.html')
@@ -29,47 +37,47 @@ def cropyield():
 
 def reg_dist(name, crop_name, dist, area, pro_predictions):
     if dist == 63:
-        with open('user_entry\\adilabad_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/adilabad_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
     elif dist == 62:
-        with open('user_entry\karimnagar_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/karimnagar_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
     elif dist == 55:
-        with open('user_entry\hyderabad_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/hyderabad_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
     elif dist == 61:
-        with open('user_entry\khammam_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/khammam_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
     elif dist == 58:
-        with open('user_entry\mahabubnagar_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/mahabubnagar_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
     elif dist == 57:
-        with open('user_entry\medak_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/medak_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
     elif dist == 59:
-        with open('user_entry\\nalgonda_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/nalgonda_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
     elif dist == 56:
-        with open('user_entry\\nizamabad_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/nizamabad_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
     elif dist == 60:
-        with open('user_entry\warangal_user_crop_entry.csv', 'a', newline='') as crop_entry:
+        with open('user_entry/warangal_user_crop_entry.csv', 'a', newline='') as crop_entry:
             write_data = csv.writer(crop_entry, delimiter=',')
             write_data.writerow([name, 2022, crop_name, int(area), int(pro_predictions)])
 
@@ -96,36 +104,36 @@ def estimation():
     price=0
 
     if crop == 'paddy':
-        pro = pickle.load(open("pkl_files\paddy_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/paddy_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
-        pri = pickle.load(open("pkl_files\paddy_pri_model.pkl", "rb"))
+        pri = pickle.load(open("pkl_files/paddy_pri_model.pkl", "rb"))
         price = pri.predict([[2022, int(area / 2.47), int(production)]])
 
     elif crop == 'sorghum':
-        pro = pickle.load(open("pkl_files\sorghum_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/sorghum_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
-        pri = pickle.load(open("pkl_files\sorghum_pri_model.pkl", "rb"))
+        pri = pickle.load(open("pkl_files/sorghum_pri_model.pkl", "rb"))
         price = pri.predict([[2022, int(area / 2.47), int(production)]])
 
     elif crop == 'arhar':
-        pro = pickle.load(open("pkl_files\\arhar_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/arhar_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
-        pri = pickle.load(open("pkl_files\\arhar_pri_model.pkl", "rb"))
+        pri = pickle.load(open("pkl_files/arhar_pri_model.pkl", "rb"))
         price = pri.predict([[2022, int(area / 2.47), int(production)]])
 
     elif crop == 'groundnut':
-        pro = pickle.load(open("pkl_files\groundnut_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/groundnut_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
-        pri = pickle.load(open("pkl_files\groundnut_pri_model.pkl", "rb"))
+        pri = pickle.load(open("pkl_files/groundnut_pri_model.pkl", "rb"))
         price = pri.predict([[2022, int(area / 2.47), int(production)]])
 
     elif crop == 'sesamum':
-        pro = pickle.load(open("pkl_files\sesamum_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/sesamum_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
-        pri = pickle.load(open("pkl_files\sesamum_pri_model.pkl", "rb"))
+        pri = pickle.load(open("pkl_files/sesamum_pri_model.pkl", "rb"))
         price = pri.predict([[2022, int(area / 2.47), int(production)]])
 
-    return render_template("result_page.html", prediction_text = "Yield = {} Quintals\nPrice = {} Rs per Quintal".format(int(production), int(price)))
+    return render_template("result_page.html", prediction_text = "Yield = {} Quintals/nPrice = {} Rs per Quintal".format(int(production), int(price)))
 
 @app.route("/registration", methods=["POST", "GET"])
 def registration():
@@ -147,27 +155,27 @@ def registration():
         crop = "sesamum"
 
     if crop == 'paddy':
-        pro = pickle.load(open("pkl_files\paddy_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/paddy_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
         reg_dist(name, crop, dist, area, production)
 
     elif crop == 'sorghum':
-        pro = pickle.load(open("pkl_files\sorghum_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/sorghum_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
         reg_dist(name, crop, dist, area, production)
 
     elif crop == 'arhar':
-        pro = pickle.load(open("pkl_files\\arhar_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/arhar_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
         reg_dist(name, crop, dist, area, production)
 
     elif crop == 'groundnut':
-        pro = pickle.load(open("pkl_files\groundnut_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/groundnut_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
         reg_dist(name, crop, dist, area, production)
 
     elif crop == 'sesamum':
-        pro = pickle.load(open("pkl_files\sesamum_pro_model.pkl", "rb"))
+        pro = pickle.load(open("pkl_files/sesamum_pro_model.pkl", "rb"))
         production = pro.predict([[dist, 2022, int(area / 2.47)]])
         reg_dist(name, crop, dist, area, production)
 
@@ -177,55 +185,55 @@ def current_total(crop):
 
     x=0
 
-    crop_entry = pd.read_csv('user_entry\\adilabad_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/adilabad_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
             x+= crop_entry.iloc[i]['Production']
 
-    crop_entry = pd.read_csv('user_entry\karimnagar_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/karimnagar_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
             x+= crop_entry.iloc[i]['Production']
 
-    crop_entry = pd.read_csv('user_entry\hyderabad_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/hyderabad_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
             x+= crop_entry.iloc[i]['Production']
 
-    crop_entry = pd.read_csv('user_entry\warangal_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/warangal_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
             x+= crop_entry.iloc[i]['Production']
 
-    crop_entry = pd.read_csv('user_entry\\nalgonda_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/nalgonda_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
             x+= crop_entry.iloc[i]['Production']
 
-    crop_entry = pd.read_csv('user_entry\medak_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/medak_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
             x+= crop_entry.iloc[i]['Production']
 
-    crop_entry = pd.read_csv('user_entry\\nizamabad_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/nizamabad_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
             x+= crop_entry.iloc[i]['Production']
 
-    crop_entry = pd.read_csv('user_entry\khammam_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/khammam_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
             x+= crop_entry.iloc[i]['Production']
 
-    crop_entry = pd.read_csv('user_entry\mahabubnagar_user_crop_entry.csv')
+    crop_entry = pd.read_csv('user_entry/mahabubnagar_user_crop_entry.csv')
     index = crop_entry.index
     for i in range(0, len(index)):
         if crop_entry.iloc[i]['Crop'] == crop:
@@ -254,26 +262,26 @@ def statistics():
     total = current_total(crop)
 
     if crop=='paddy':
-        demand = pickle.load(open('pkl_files\paddy_district_model.pkl', 'rb'))
+        demand = pickle.load(open('pkl_files/paddy_district_model.pkl', 'rb'))
         threshold = demand.predict([[2022]])
 
     elif crop=='sorghum':
-        demand = pickle.load(open('pkl_files\sorghum_district_model.pkl', 'rb'))
+        demand = pickle.load(open('pkl_files/sorghum_district_model.pkl', 'rb'))
         threshold = demand.predict([[2022]])
 
     elif crop=='arhar':
-        demand = pickle.load(open('pkl_files\\arhar_district_model.pkl', 'rb'))
+        demand = pickle.load(open('pkl_files/arhar_district_model.pkl', 'rb'))
         threshold = demand.predict([[2022]])
 
     elif crop=='groundnut':
-        demand = pickle.load(open('pkl_files\groundnut_district_model.pkl', 'rb'))
+        demand = pickle.load(open('pkl_files/groundnut_district_model.pkl', 'rb'))
         threshold = demand.predict([[2022]])
 
     elif crop=='sesamum':
-        demand = pickle.load(open('pkl_files\sesamum_district_model.pkl', 'rb'))
+        demand = pickle.load(open('pkl_files/sesamum_district_model.pkl', 'rb'))
         threshold = demand.predict([[2022]])
 
-    x = '2022'
+    x = '2023'
     y = total
 
     fig = Figure()
@@ -283,7 +291,7 @@ def statistics():
     buf = BytesIO()
     fig.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
-    return f"<img src='data:image/png;base64,{data}'/>"
+    return f"<center><figure><img src='data:image/png;base64,{data}'/><figcaption>Total Estimated Production vs Demand Graph of {crop}</figcaption></figure></center>"
 
 @app.route('/recommendfile', methods=["POST", "GET"])
 def recommendfile():
@@ -295,7 +303,7 @@ def fertilizersfile():
 
 @app.route("/recommend", methods=["POST", "GET"])
 def recommend():
-    model = pickle.load(open("pkl_files\model.pkl", "rb"))
+    model = pickle.load(open("pkl_files/model.pkl", "rb"))
     n = int(request.form.get('n'))
     p = int(request.form.get('p'))
     k = int(request.form.get('k'))
@@ -320,7 +328,7 @@ def recommend():
 
 @app.route("/fertilizers", methods=["POST", "GET"])
 def fertilizers():
-    fertilizer = pickle.load(open("pkl_files\\fertilizer.pkl", "rb"))
+    fertilizer = pickle.load(open("pkl_files/fertilizer.pkl", "rb"))
     temp = int(request.form.get('temp'))
     humidity = int(request.form.get('h'))
     mc = int(request.form.get('mc'))
